@@ -102,39 +102,86 @@ const selector = {
 // };
 
 // window.addEventListener("scroll", handleScroll);
+
+// const heroBackground = document.querySelector(".hero_background");
+// const windowHeight = window.innerHeight;
+
+// const showBackground = () => {
+//   gsap.to(heroBackground, {
+//     opacity: 1,
+//     duration: 1, // Faster transition
+//     ease: "none" // No easing
+//   });
+// };
+
+// const hideBackground = () => {
+//   gsap.to(heroBackground, {
+//     opacity: 0,
+//     duration: 1, // Faster transition
+//     ease: "none" // No easing
+//   });
+// };
+
+// let lastScrollPosition = window.scrollY;
+
+// const handleScroll = () => {
+//   const currentScrollPosition = window.scrollY;
+
+//   if (currentScrollPosition > lastScrollPosition && currentScrollPosition > windowHeight) {
+//     // Scrolling down
+//     hideBackground();
+//   } else {
+//     // Scrolling up
+//     showBackground();
+//   }
+
+//   lastScrollPosition = currentScrollPosition;
+// };
+
+// window.addEventListener("scroll", handleScroll);
+
+
+// const heroBackground = document.querySelector(".hero_background");
+// const windowHeight = window.innerHeight;
+// const scrollDuration = 1; // Duration of the scroll animation in seconds
+
+// const handleScroll = () => {
+//   const scrollPosition = window.scrollY;
+//   const maxScroll = document.body.scrollHeight - windowHeight;
+//   const scrollPercentage = scrollPosition / maxScroll;
+
+//   // Calculate the opacity based on scroll percentage
+//   const opacity = scrollPercentage > 0.5 ? 1 : scrollPercentage * 2;
+
+//   // Update the opacity of the hero background gradually
+//   gsap.to(heroBackground, {
+//     opacity: opacity,
+//     duration: scrollDuration,
+//     ease: "none" // No easing
+//   });
+// };
+
+// window.addEventListener("scroll", handleScroll);
+
+
 const heroBackground = document.querySelector(".hero_background");
 const windowHeight = window.innerHeight;
-
-const showBackground = () => {
-  gsap.to(heroBackground, {
-    opacity: 1,
-    duration: 1, // Faster transition
-    ease: "none" // No easing
-  });
-};
-
-const hideBackground = () => {
-  gsap.to(heroBackground, {
-    opacity: 0,
-    duration: 1, // Faster transition
-    ease: "none" // No easing
-  });
-};
-
-let lastScrollPosition = window.scrollY;
+const scrollDuration = 1; // Duration of the scroll animation in seconds
 
 const handleScroll = () => {
-  const currentScrollPosition = window.scrollY;
+  const scrollPosition = window.scrollY;
+  const maxScroll = document.body.scrollHeight - windowHeight;
+  const scrollPercentage = scrollPosition / maxScroll;
 
-  if (currentScrollPosition > lastScrollPosition && currentScrollPosition > windowHeight) {
-    // Scrolling down
-    hideBackground();
-  } else {
-    // Scrolling up
-    showBackground();
-  }
+  // Calculate the opacity based on scroll percentage
+  const opacity = scrollPercentage <= 0.5 ? 1 : (1 - scrollPercentage) * 2;
 
-  lastScrollPosition = currentScrollPosition;
+  // Update the opacity of the hero background gradually
+  gsap.to(heroBackground, {
+    opacity: opacity,
+    duration: scrollDuration,
+    ease: "none" // No easing
+  });
 };
 
 window.addEventListener("scroll", handleScroll);
