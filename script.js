@@ -66,6 +66,7 @@ const selector = {
   
   // Initialize Lenis when DOM content is fully loaded
   window.addEventListener("DOMContentLoaded", initLenis);
+// from top to bottom
 //   const heroBackground = document.querySelector(".hero_background");
 // const windowHeight = window.innerHeight;
 
