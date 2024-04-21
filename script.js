@@ -66,29 +66,29 @@ const selector = {
   
   // Initialize Lenis when DOM content is fully loaded
   window.addEventListener("DOMContentLoaded", initLenis);
-from top to bottom
-  const heroBackground = document.querySelector(".hero_background");
-const windowHeight = window.innerHeight;
+// from top to bottom
+//   const heroBackground = document.querySelector(".hero_background");
+// const windowHeight = window.innerHeight;
 
-const showBackground = () => {
-  gsap.to(heroBackground, {
-    opacity: 1,
-    duration: 1, // Adjust the duration as needed
-    ease: "power2.inOut" // Adjust the ease as needed
-  });
-};
+// const showBackground = () => {
+//   gsap.to(heroBackground, {
+//     opacity: 1,
+//     duration: 1, // Adjust the duration as needed
+//     ease: "power2.inOut" // Adjust the ease as needed
+//   });
+// };
 
-const hideBackground = () => {
-  gsap.to(heroBackground, {
-    opacity: 0,
-    duration: 1, // Adjust the duration as needed
-    ease: "power2.inOut" // Adjust the ease as needed
-  });
-};
+// const hideBackground = () => {
+//   gsap.to(heroBackground, {
+//     opacity: 0,
+//     duration: 1, // Adjust the duration as needed
+//     ease: "power2.inOut" // Adjust the ease as needed
+//   });
+// };
 
-let lastScrollPosition = 0;
+// let lastScrollPosition = 0;
 
-const handleScroll = () => {
+// const handleScroll = () => {
 //   const currentScrollPosition = window.scrollY;
 
 //   if (currentScrollPosition > lastScrollPosition && currentScrollPosition > windowHeight) {
